@@ -4,5 +4,6 @@ npm init --yes
 npm i express
 npm i dotenv
 npm i --save-dev nodemon concurrently
+npm i mongoose
 
 Para correrlo en terminal: npm run server
