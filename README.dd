@@ -1,0 +1,8 @@
+
+
+npm init --yes
+npm i express
+npm i dotenv
+npm i --save-dev nodemon concurrently
+
+Para correrlo en terminal: npm run server
