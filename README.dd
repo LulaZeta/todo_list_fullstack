@@ -5,5 +5,9 @@ npm i express
 npm i dotenv
 npm i --save-dev nodemon concurrently
 npm i mongoose
+npm i bcrypt
+npm i bcryptjs
+npm i validator
+
 
 Para correrlo en terminal: npm run server
