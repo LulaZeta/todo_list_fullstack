@@ -1,3 +1,4 @@
+Para correrlo en terminal: npm run server
 npm init --yes
 npm i express
 npm i dotenv
@@ -9,4 +10,19 @@ npm i validator
 npm i cookie-parser
 npm i jsonwebtoken
 
-Para correrlo en terminal: npm run server
+"scripts": {
+"test": "echo \"Error: no test specified\" && exit 1",
+"server": "nodemon server.js --ignore client",
+"client": "cd client && npm start",
+"dev": "concurrently \"npm run client\" \"npm run server\""
+},
+
+//CLIENT
+npx create-react-app
+npm i react-router-dom
+npm i axios
+npm i sass
+en el package.json, agregamos:
+"proxy": "http://localhost:5000"
+
+corren ambas terminales en: npm run dev
