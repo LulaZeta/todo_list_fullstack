@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import AuthBox from './AuthBox';
 import Header from './Header';
 
 const Layout = () => {
@@ -7,7 +8,7 @@ const Layout = () => {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route exact path="/" element={<h1>Home</h1>} />
+        <Route exact path="/" element={<AuthBox />} />
         <Route path="/test" element={<h1>Test</h1>} />
       </Routes>
     </BrowserRouter>
