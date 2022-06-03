@@ -1,5 +1,8 @@
+import './main.scss';
+import Layout from './components/Layout';
+
 function App() {
-  return <div>Lu</div>;
+  return <Layout />;
 }
 
 export default App;
