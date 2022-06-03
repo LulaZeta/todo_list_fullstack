@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useGlobalContext } from '../context/GlobalContext';
 
 const Header = () => {
-  const { user } = useGlobalContext();
+  const { user, logout } = useGlobalContext();
   const { pathname } = useLocation();
   return (
     <div className="main-header">
@@ -13,7 +13,9 @@ const Header = () => {
         </div>
         <div className="main-header__right">
           {user ? (
-            <button className="btn">Logout</button>
+            <button className="btn" onClick={logout}>
+              Logout
+            </button>
           ) : pathname === '/' ? (
             <Link to="/register" className="btn">
               Register
