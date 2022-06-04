@@ -87,10 +87,18 @@ export const GlobalProvider = (props) => {
       dispatch({ type: 'RESET_USER' });
     }
   };
+
+  const addToDo = (toDo) => {
+    dispatch({
+      type: 'SET_INCOMPLETE_TODO',
+      payload: [toDo, ...state.incompleteToDos],
+    });
+  };
   const value = {
     ...state,
     getCurrentUser,
     logout,
+    addToDo,
   };
 
   return (
