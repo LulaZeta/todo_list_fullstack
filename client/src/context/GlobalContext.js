@@ -90,7 +90,7 @@ export const GlobalProvider = (props) => {
 
   const addToDo = (toDo) => {
     dispatch({
-      type: 'SET_INCOMPLETE_TODO',
+      type: 'SET_INCOMPLETE_TODOS',
       payload: [toDo, ...state.incompleteToDos],
     });
   };
@@ -143,6 +143,26 @@ export const GlobalProvider = (props) => {
       });
     }
   };
+
+  const updateToDo = (toDo) => {
+    if (toDo.complete) {
+      const newCompleteToDos = state.completeToDos.map((completeToDo) =>
+        completeToDo._id !== toDo._id ? completeToDo : toDo
+      );
+      dispatch({
+        type: 'SET_COMPLETE_TODOS',
+        payload: newCompleteToDos,
+      });
+    } else {
+      const newIncompleteToDos = state.incompleteToDos.map((incompleteToDo) =>
+        incompleteToDo._id !== toDo._id ? incompleteToDo : toDo
+      );
+      dispatch({
+        type: 'SET_INCOMPLETE_TODOS',
+        payload: newIncompleteToDos,
+      });
+    }
+  };
   const value = {
     ...state,
     getCurrentUser,
@@ -151,6 +171,7 @@ export const GlobalProvider = (props) => {
     toDoComplete,
     toDoIncomplete,
     removeToDo,
+    updateToDo,
   };
 
   return (

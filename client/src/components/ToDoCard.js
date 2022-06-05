@@ -3,7 +3,8 @@ import axios from 'axios';
 import { useGlobalContext } from '../context/GlobalContext';
 
 const ToDoCard = ({ toDo }) => {
-  const { toDoComplete, toDoIncomplete, removeToDo } = useGlobalContext();
+  const { toDoComplete, toDoIncomplete, removeToDo, updateToDo } =
+    useGlobalContext();
   const [content, setContent] = React.useState(toDo.content);
   const [editing, setEditing] = React.useState(false);
   const input = React.useRef(null);
@@ -44,6 +45,20 @@ const ToDoCard = ({ toDo }) => {
       });
   };
 
+  const editToDo = (e) => {
+    e.preventDefault();
+
+    axios
+      .put(`api/todos/${toDo._id}`, { content })
+      .then((res) => {
+        updateToDo(res.data);
+        setEditing(false);
+      })
+      .catch(() => {
+        stopEditing();
+      });
+  };
+
   return (
     <div className={`todo ${toDo.complete ? 'todo--complete' : ''}`}>
       <input
@@ -68,7 +83,7 @@ const ToDoCard = ({ toDo }) => {
         ) : (
           <>
             <button onClick={stopEditing}>Cancel</button>
-            <button>Save</button>
+            <button onClick={editToDo}>Save</button>
           </>
         )}
       </div>
