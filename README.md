@@ -26,3 +26,16 @@ en el package.json, agregamos:
 "proxy": "http://localhost:5000"
 
 corren ambas terminales en: npm run dev
+
+HEROKU
+package.json
+"scripts": {
+"test": "echo \"Error: no test specified\" && exit 1",
+"server": "nodemon server.js --ignore client",
+"client": "cd client && npm start",
+"dev": "concurrently \"npm run client\" \"npm run server\"",
+"install-client": "cd client && npm install",
+"build": "cd client && npm run build",
+"heroku-postbuild": "npm run install-client && npm run build",
+"start": "node server.js"
+}
