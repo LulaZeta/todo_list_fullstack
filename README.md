@@ -1,3 +1,32 @@
+
+# to Do List
+
+Full Stack Application.
+
+<p align="center">
+  <img src="./toDoList.jpg" width= 600 >
+</p>
+
+## Realizado con:
+- React
+- MongoDB 
+- Express
+- Node
+s
+
+## Recursos
+
+
+bcrypt
+bcryptjs
+validator
+cookie-parser
+jsonwebtoken
+
+
+
+
+
 Para correrlo en terminal: npm run server
 npm init --yes
 npm i express
