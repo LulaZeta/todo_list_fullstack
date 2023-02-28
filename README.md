@@ -4,7 +4,7 @@
 Full Stack Application.
 
 <p align="center">
-  <img src="./toDoList.jpg" width= 600 >
+  <img src="./toDoList.png" width= 600 >
 </p>
 
 ## Realizado con:
@@ -17,11 +17,11 @@ s
 ## Recursos
 
 
-bcrypt
-bcryptjs
-validator
-cookie-parser
-jsonwebtoken
+- bcrypt
+- bcryptjs
+- validator
+- cookie-parser
+- jsonwebtoken
 
 
 
